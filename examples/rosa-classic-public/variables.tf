@@ -23,3 +23,38 @@ variable "url" {
   description = "The URL of the OpenShift cluster."
   default = "https://api.openshift.com"
 }
+
+variable "admin_credentials_password" {
+  type        = string
+  description = "The password for the administrator"
+}
+
+variable "replicas" {
+  type        = number
+  default     = 3
+  description = "The number of replicas for the multi-az deployment"
+}
+
+variable "idp_name" {
+  type        = string
+  description = "The display name for the identity provider"
+}
+
+#########################
+# Github IDP
+#########################
+
+variable "github_idp_client_id" {
+  type        = string
+  description = "Client secret issued by Github (required). Valid only to Github Identity Provider (idp_type=github)"
+}
+
+variable "github_idp_client_secret" {
+  type        = string
+  description = "Client secret issued by Github (required). Valid only to Github Identity Provider (idp_type=github)"
+}
+
+variable "github_idp_organizations" {
+  type        = list(string)
+  description = "Only users that are members of at least one of the listed organizations will be allowed to log in (optional). Valid only to Github Identity Provider (idp_type=github)"
+}
