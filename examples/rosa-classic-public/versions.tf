@@ -11,4 +11,13 @@ terraform {
       source  = "terraform-redhat/rhcs"
     }
   }
+
+  backend "s3" {
+    key            = "rosa.tfstate"
+  }
+}
+
+provider "rhcs" {
+  token = var.token
+  url = var.url
 }

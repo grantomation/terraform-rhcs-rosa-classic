@@ -12,3 +12,14 @@ variable "cluster_name" {
   type        = string
   description = "Name of the cluster. After the creation of the resource, it is not possible to update the attribute value."
 }
+
+variable "token" {
+  type        = string
+  description = "The token to use for authenticating with the OpenShift cluster."
+}
+
+variable "url" {
+  type        = string
+  description = "The URL of the OpenShift cluster."
+  default = "https://api.openshift.com"
+}
